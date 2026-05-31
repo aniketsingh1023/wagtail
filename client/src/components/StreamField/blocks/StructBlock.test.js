@@ -62,6 +62,8 @@ describe('telepath: wagtail.blocks.StructBlock', () => {
     getValue = jest.fn();
     focus = jest.fn();
 
+    localStorage.clear();
+
     // Define a test block
     const blockDef = new StructBlockDefinition(
       'heading_block',
@@ -266,6 +268,9 @@ describe('telepath: wagtail.blocks.StructBlock with collapsible panel', () => {
     getValue = jest.fn();
     focus = jest.fn();
 
+    // Clear localStorage so panel persistence state from other tests doesn't bleed in.
+    localStorage.clear();
+
     setup();
   });
 
@@ -381,6 +386,9 @@ describe('telepath: wagtail.blocks.StructBlock with nested collapsible panel', (
     getState = jest.fn();
     getValue = jest.fn();
     focus = jest.fn();
+
+    // Clear localStorage so panel persistence state from other tests doesn't bleed in.
+    localStorage.clear();
 
     // Define a test block
     const settingsBlockDef = new StructBlockDefinition(
